@@ -206,10 +206,7 @@ candidate ──就绪──► awaiting_go ──G0 开始──► developing
                                             integrating（⑦⑧⑨+本地集成）
                                                  │ 通过
                                                  ▼
-                                            merging（PR/CI）
-                                                 │
-                                                 ▼
-                                            deploying（TOP 测试，G2 审批）
+                                            deploying（提测分支 → TOP 测试，G2 审批）
                                                  │
                                                  ▼
                                             verifying（SHA/日志/页面）
@@ -218,7 +215,7 @@ candidate ──就绪──► awaiting_go ──G0 开始──► developing
                                        awaiting_acceptance（状态=待验收）
                                           │ 通过              │ 不通过
                                           ▼                   ▼
-                                   merged（合 main）        fixing
+                                   merging（PR + CI + 合 main） fixing
                                           │                   │
                                           ▼                   └──► integrating
                                   awaiting_release（状态=待发布）
