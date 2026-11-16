@@ -391,6 +391,7 @@ candidate ──就绪──► awaiting_go ──G0 开始──► developing
 - 提交审核 → 等负责人 + 运维审批（**人**）。
 - 轮询发布状态；记录 `releaseId`、`buildId`、配置版本、实际运行 SHA，执行 `npm run release:top -- record-test`。
 - 幂等：一个版本一个发布单；发布失败不自动重发，先看日志再决定。
+- 通道降级：若 TOP MCP 没有建单/提审工具，agent 只生成提测申请（分支/SHA/变更/验收清单）并在群里 @发布负责人 建单；审批与执行仍在平台由人完成，不绕过。
 - 失败：`blocked`，群里报「部署失败 + task/日志线索」。
 
 ### 4.9 S10 验证
